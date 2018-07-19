@@ -1,5 +1,5 @@
-# MyInfinity
-A Theme for WHMCS 6.x & 7.x
+## AliDDNS-v2.0.sh
+* AliDDNS (阿里云-云解析 DDNS 更新工具)
 
 ## 编写中
 * assets文件夹由于尚未完成编写暂不上传，因为需要在完成后进行精简。

@@ -1,2 +1,3 @@
-#！/bin/sh
+#!/bin/bash
+#Check Root
 cd /home

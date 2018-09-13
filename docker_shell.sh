@@ -6,3 +6,5 @@ sudo yum-config-manager \
      https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum makecache fast
 sudo yum install docker-ce  -y
+sudo systemctl start docker
+sudo docker pull yangyzp/ssr-manyuser-docker

@@ -6,3 +6,4 @@ service crond restart
 chkconfig crond on
 systemctl stop firewalld.service
 systemctl disable firewalld.service
+

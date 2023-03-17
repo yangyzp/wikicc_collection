@@ -55,16 +55,6 @@ else
 fi
 echo "ulimit已调优"
 
-#bbr
-if uname -r|grep -q "^5."
-then
-    echo "kernel 5.x OK"
-else
-    echo "updating kernel..."
-    rm /root/bbr.sh -f;wget neko.nnr.moe:1314/bbr.sh -O /root/bbr.sh > /dev/null; bash /root/bbr.sh > /dev/null
-fi
-echo "BBR内核安装完成"
-
 # sysctl.conf
 rm -f /etc/sysctl.d/*.conf
 cat > '/etc/sysctl.conf' << EOF

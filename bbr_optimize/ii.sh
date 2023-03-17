@@ -2,24 +2,6 @@
 
 apt -v && apt update -y
 
-bash -c "firewalld -h && yum remove firewalld -y ; setenforce 0 && sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config">/dev/null
-bash -c "ufw -v && systemctl stop ufw && systemctl disable ufw && apt remove ufw -y">/dev/null
-echo "已卸载防火墙"
-#stop some service
-systemctl stop waagent && systemctl disable waagent && echo "已停止waagent"
-systemctl stop walinuxagent && systemctl disable walinuxagent && echo "已停止waagent"
-systemctl stop hypervkvpd && systemctl disable hypervkvpd && echo "已停止hypervkvpd"
-tuned -v > /dev/null && systemctl stop tuned && systemctl disable tuned && echo "已停止tuned"
-systemctl stop smartd && systemctl disable smartd && echo "已停止smartd"
-
-/usr/local/qcloud/YunJing/uninst.sh
-/usr/local/qcloud/stargate/admin/uninstall.sh
-/usr/local/qcloud/monitor/barad/admin/uninstall.sh
-/usr/local/sa/agent/uninstall.sh
-rm -rf /usr/local/qcloud
-sed -i "/qcloud/d" /etc/rc.local
-echo "已卸载腾讯云"
-
 # ulimit & open files
 echo "1000000" > /proc/sys/fs/file-max
 ulimit -SHn 1000000 && ulimit -c unlimited
